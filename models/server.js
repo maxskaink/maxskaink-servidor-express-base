@@ -7,7 +7,7 @@ class Server {
     
     constructor() {
         this.port = process.env.PORT
-        this.usuariosPath = "/api/usuarios/"
+        this.apiPath = "/api"
         //Inicar express
         this.app = express()
         
@@ -28,12 +28,12 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.usuariosPath, require("../routes/user"))
+        this.app.use(this.apiPath, require("../routes/api"))
     }
 
     listen() {
 
-        this.app.listen(this.port, (msg) => console.log(`Server init on port ${this.port}`))
+        this.app.listen(this.port, (msg) => console.log(`Servidor iniciado en el puerto: ${this.port}`))
     
     }
 }

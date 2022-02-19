@@ -4,13 +4,13 @@ const { getUsuarios,
         putUsuarios, 
         postUsuarios, 
         deleateUsuarios 
-      } = require("../controllers/userctr");
+      } = require("../controllers/apiControl");
 
 const router = Router();
 
 router.get("/", getUsuarios)        
 
-router.put("/:id", putUsuarios)        
+router.put("/", putUsuarios)        
 
 router.post("/", postUsuarios)        
 
